@@ -12,7 +12,7 @@ export default function About() {
                     trigger: "#clip",
                     start: "center center",
                     end: "+=800 center",
-                    scrub: 0.5,
+                    scrub: 0.8,
                     pin: true,
                 }
             }
@@ -28,8 +28,10 @@ export default function About() {
         <div id='about' className='min-h-screen w-screen'>
             <div className='relative mb-8 mt-36 flex flex-col items-center justify-center gap-5'>
                 {/* heading */}
-                <h2 className='font-general text-sm uppercase md:text-[20px]'>Welcome to Zentry</h2>
-                <AnimatedTitle title={"Discover the world's largest shared adventure"} containerClass=" mt-5 text-center text-2xl uppercase" />
+                <h2 className='font-general text-sm uppercase md:text-[10px]'>Welcome to Zentry</h2>
+                <div className='relative size-full flex justify-center align-middle w-[50%]'>
+                    <AnimatedTitle title={"Discover the world's largest shared adventure"} containerClass=" mt-5 text-center text-[4rem] uppercase text-black" />
+                </div>
                 {/* Big heading */}
                
                 {/* Below image Text */}

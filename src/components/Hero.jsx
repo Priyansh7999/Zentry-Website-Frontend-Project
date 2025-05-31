@@ -72,7 +72,7 @@ function Hero() {
     })
 
     return (
-        <div className='relative h-dvh w-screen overflow-x-hidden'>
+        <div id='Hero' className='relative h-dvh w-screen overflow-x-hidden'>
             {loading && (
                 <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
                     {/* https://uiverse.io/G4b413l/tidy-walrus-92 */}

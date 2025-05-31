@@ -109,13 +109,13 @@ body {
   }
 
   .story-img-mask {
-    @apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5;
-    clip-path: polygon(4% 0, 83% 21%, 100% 73%, 0% 100%);
+    @apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-20%] md:size-4/5;
+    clip-path: polygon(15% 10%, 63% 21%, 70% 83%, 10% 100%);
   }
 
   .story-img-content {
     @apply absolute w-full md:h-dvh h-[50dvh] opacity-100 left-10 top-16 md:left-0 md:top-10 lg:left-[-300px] lg:top-[-100px];
-    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
+    /* transform: translate3d(10, 200, 10) rotateX(0) rotateY(0) rotateZ(20) scale(1); */
   }
 
   .gallery-img-container {
@@ -144,7 +144,7 @@ body {
 }
 
 .indicator-line {
-  @apply h-1 w-px rounded-full bg-white transition-all duration-200 ease-in-out;
+  @apply h-2 w-px bg-white transition-all duration-200 ease-in-out;
 }
 
 .indicator-line.active {
