@@ -21,20 +21,20 @@ function Hero() {
 
     function handleMiniVideoClick() {
         if (isTransitioning) return; // Prevent multiple clicks during transition
-        
+
         setIsTransitioning(true);
         const nextVideo = (currentVideo % totalVideos) + 1;
-        
+
         // Start loading the video immediately but don't show it yet
         setHasClicked(true);
-        
+
         // After 1 second, update the current video and show the transition
         setTimeout(() => {
             setCurrentVideo(nextVideo);
             setIsTransitioning(false);
         }, 500);
     };
-    
+
     const handleVideoLoad = () => {
         setLoadedVideos((prev) => prev + 1);
     };
@@ -88,19 +88,22 @@ function Hero() {
         <div id='home' className='relative h-dvh w-screen overflow-x-hidden'>
             {loading && (
                 <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
-                    {/* https://uiverse.io/G4b413l/tidy-walrus-92 */}
                     <div className="three-body">
                         <div className="three-body__dot"></div>
                         <div className="three-body__dot"></div>
                         <div className="three-body__dot"></div>
-                    </div>
+                        <div className='text-center'>
+                            <p>
+                                Please wait while the content loads — it might take a little longer the first time. <br /> Once loaded, refreshing the page can help smooth out the animations.
+                            </p>
+                        </div>                    </div>
                 </div>
             )}
             <div id='video-frame' className='relative z-10 h-dvh w-screen overlfow-hidden rounded-lg bg-blue-75'>
                 <div>
                     <div className=" mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-3xl">
-                        <div 
-                            onClick={handleMiniVideoClick}   
+                        <div
+                            onClick={handleMiniVideoClick}
                             className={`origin-center scale-50 opacity-20 transition-all duration-300 ease-out hover-scale-loop ${isTransitioning ? 'pointer-events-none opacity-50' : ''}`}
                         >
                             {/* MINI VIDEO PLAYER */}
@@ -125,7 +128,7 @@ function Hero() {
                         muted
                         id='hidden-video'
                         className='absolute-center invisible absolute z-20 size-64 object-cover object-center'
-                         onLoadedData={handleVideoLoad}
+                        onLoadedData={handleVideoLoad}
                     />
                     {/* Big video visible */}
                     <video
