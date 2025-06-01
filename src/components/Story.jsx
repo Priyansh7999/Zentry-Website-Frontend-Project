@@ -83,9 +83,9 @@ export default function Story() {
                             </defs>
                         </svg>
                     </div>
-                    <div className='absolute md:bottom-0 md:right-20 md:w-[30%] w-full right-0 bottom-20 p-10'>
+                    <div className='absolute md:bottom-0 md:right-20 md:w-[30%] w-full right-0 bottom-20 p-10 flex flex-col gap-5'>
                         <p className='text-lg font-circular-web'>Where realms converge, lies Zentry and the boundless pillar. Discover its secrets and shape your fate amidst infinite opportunities.</p>
-                        <Button id="explore" title="Explore" containerClass=" flex bg-blue-50" rightIcon={<TiLocationArrow />}  />
+                        <Button id="explore" title="Explore" containerClass=" text-black flex bg-blue-50" rightIcon={<TiLocationArrow />}  />
                     </div>
                 </div>
             </div>

@@ -12,6 +12,7 @@ function Hero() {
     const [hasClicked, setHasClicked] = useState(false);
     const [loading, setLoading] = useState(true);
     const [loadedVideos, setLoadedVideos] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
     const nextVideoRef = useRef(null);
 
     function getVideoSrc(index) {
@@ -19,9 +20,21 @@ function Hero() {
     }
 
     function handleMiniVideoClick() {
+        if (isTransitioning) return; // Prevent multiple clicks during transition
+        
+        setIsTransitioning(true);
+        const nextVideo = (currentVideo % totalVideos) + 1;
+        
+        // Start loading the video immediately but don't show it yet
         setHasClicked(true);
-        setCurrentVideo((prev) => (prev % totalVideos) + 1);
+        
+        // After 1 second, update the current video and show the transition
+        setTimeout(() => {
+            setCurrentVideo(nextVideo);
+            setIsTransitioning(false);
+        }, 500);
     };
+    
     const handleVideoLoad = () => {
         setLoadedVideos((prev) => prev + 1);
     };
@@ -36,7 +49,7 @@ function Hero() {
 
     // GSAP WORK
     useGSAP(() => {
-        if (hasClicked) {
+        if (hasClicked && !isTransitioning) {
             gsap.set('#hidden-video', { visibility: 'visible' })
             gsap.to('#hidden-video', {
                 duration: 1,
@@ -72,7 +85,7 @@ function Hero() {
     })
 
     return (
-        <div id='Hero' className='relative h-dvh w-screen overflow-x-hidden'>
+        <div id='home' className='relative h-dvh w-screen overflow-x-hidden'>
             {loading && (
                 <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
                     {/* https://uiverse.io/G4b413l/tidy-walrus-92 */}
@@ -86,7 +99,10 @@ function Hero() {
             <div id='video-frame' className='relative z-10 h-dvh w-screen overlfow-hidden rounded-lg bg-blue-75'>
                 <div>
                     <div className=" mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-3xl">
-                        <div onClick={handleMiniVideoClick} className='origin-center scale-75 opacity-20 transition-all duration-300 ease-out hover:scale-100 hover:opacity-100'>
+                        <div 
+                            onClick={handleMiniVideoClick}   
+                            className={`origin-center scale-50 opacity-20 transition-all duration-300 ease-out hover-scale-loop ${isTransitioning ? 'pointer-events-none opacity-50' : ''}`}
+                        >
                             {/* MINI VIDEO PLAYER */}
                             <video
                                 ref={nextVideoRef}
@@ -95,7 +111,7 @@ function Hero() {
                                 muted
                                 // autoPlay
                                 id='mini-video'
-                                className='size-64 origin-center scale-30 object-cover object-center rounded-3xl hover:scale-100'
+                                className='size-64 object-cover scale-30 rounded-3xl hover:scale-100'
                                 onLoadedData={handleVideoLoad}
                             />
                         </div>

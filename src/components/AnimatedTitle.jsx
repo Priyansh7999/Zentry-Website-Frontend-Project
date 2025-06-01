@@ -32,7 +32,7 @@ export default function AnimatedTitle({ title, containerClass }) {
     }, []);
 
     return (
-        <div>
+        <div className='flex flex-col justify-center items-center'>
             <div
                 ref={titleRef}
                 id='title'

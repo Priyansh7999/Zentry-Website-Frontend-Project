@@ -59,7 +59,7 @@ export default function Navbar() {
             <header className='absolute top-1/2 w-full -translate-y-1/2'>
                 <nav className='flex size-full items-center justify-between p-4'>
                     <div className='flex items-center gap-7'>
-                        <img src="/img/gallery-1.webp" alt="logo" className='w-8 rounded-full' onClick={() => window.location.href = '#Hero'} />
+                        <img src="/img/gallery-1.webp" alt="logo" className='w-8 rounded-full' onClick={() => window.location.href = '#home'} />
                         <Button
                             title={"Products"}
                             rightIcon={<TiLocationArrow />}
@@ -83,7 +83,7 @@ export default function Navbar() {
                         </div>
                         <button className='ml-10 flex items-center space-x-0.5'
                             onClick={toogleAudioIndicator}>
-                            <audio ref={audioElement} src="/audio/loop.mp3" loop />
+                            <audio ref={audioElement} src="/audio/loop.mp3" loop  />
                             {[1, 2, 3, 4, 5].map((bar) => (
                                 <div
                                     key={bar}

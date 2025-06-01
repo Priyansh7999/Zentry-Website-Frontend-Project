@@ -1,13 +1,27 @@
-import React from 'react'
+import clsx from "clsx";
 
-export default function Button(props) {
+const Button = ({ id, title, rightIcon, leftIcon, containerClass }) => {
   return (
-    <div>
-      <button id={props.id} className={`group relative z-10 w-fit cursor-pointer overflow-hidden rounded-full px-4 py-2 text-black ${props.containerClass}`}>
-        {props.leftIcon}
-        {props.title}
-        {props.rightIcon}
-      </button>
-    </div>
-  )
-}
+    <button
+      id={id}
+      className=
+        {`button-hover-colorful group relative z-10 w-fit cursor-pointer overflow-hidden rounded-full px-9 py-3 ${containerClass}`}
+
+    >
+      {leftIcon}
+
+      <span className="relative inline-flex overflow-hidden font-general text-xs uppercase">
+        <div className="translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12">
+          {title}
+        </div>
+        <div className="absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
+          {title}
+        </div>
+      </span>
+
+      {rightIcon}
+    </button>
+  );
+};
+
+export default Button;

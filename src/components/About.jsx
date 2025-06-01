@@ -33,7 +33,7 @@ export default function About() {
                     <AnimatedTitle title={"Discover the world's largest shared adventure"} containerClass=" mt-5 text-center text-[4rem] uppercase text-black" />
                 </div>
                 {/* Big heading */}
-               
+
                 {/* Below image Text */}
                 <div className='about-subtext'>
                     <p>The Game of Games begins-your life, now an epic MMORPG</p>
@@ -42,11 +42,18 @@ export default function About() {
             </div>
             {/* Image */}
             <div className="h-dvh w-screen" id="clip">
-                <div className="mask-clip-path absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];">
+                <div className="mask-clip-path  absolute h-[50vh] w-[25rem] left-1/2 top-0 z-20 origin-center -translate-x-1/2 overflow-hidden rounded-3xl">
                     <img
                         src="img/about.webp"
                         alt="Background"
                         className="size-full object-cover"
+                    />
+                </div>
+                <div className="mask-clip-path absolute h-[90vh] w-[120rem] left-1/2 top-0 z-20 origin-center -translate-x-1/2 overflow-hidden rounded-3xl">
+                    <img
+                        src="img/stones.webp"
+                        alt="Background"
+                        className="w-100 size-full object-cover"
                     />
                 </div>
             </div>

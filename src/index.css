@@ -119,9 +119,9 @@ body {
   }
 
   .gallery-img-container {
-    @apply size-64 overflow-hidden bg-violet-300;
+    @apply size-64 overflow-hidden ;
   }
-
+/* bg-violet-300 */
   .gallery-img {
     @apply size-full bg-cover;
   }
@@ -270,4 +270,43 @@ body {
     transform: translateY(66%) scale(0.65);
     opacity: 0.8;
   }
+}
+@keyframes scale-pulse-loop {
+  0% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.7);
+  }
+}
+
+.hover-scale-loop:hover {
+  animation: scale-pulse-loop 1.5s infinite ease-in-out;
+  opacity: 1 !important;
+}
+/* Version with color change */
+.button-hover-colorful {
+  padding: 12px 32px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.button-hover-colorful:hover {
+  clip-path: polygon(15% 10%, 90% 20%, 95% 90%, 20% 90%);
+  color: aliceblue;
+  background: #7c3aed;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+}
+.bg-text-image {
+  background-image: url('/img/about.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: text;
+  color: transparent;
 }
