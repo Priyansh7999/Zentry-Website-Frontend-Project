@@ -165,26 +165,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-        
-        .float-animation {
-          animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes glow {
-          0%, 100% { text-shadow: 0 0 20px rgba(255,255,255,0.3); }
-          50% { text-shadow: 0 0 40px rgba(255,255,255,0.6), 0 0 60px rgba(139,92,246,0.4); }
-        }
-        
-        .glow-animation {
-          animation: glow 2s ease-in-out infinite;
-        }
-      `}</style>
     </div>
   );
 }
