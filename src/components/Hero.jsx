@@ -86,7 +86,7 @@ function Hero() {
 
     return (
         <div id='home' className='relative h-dvh w-screen overflow-x-hidden'>
-            {loading && (
+            {/* {loading && (
                 <>
                     <div className="flex-center flex-col absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
                         <div className="three-body">
@@ -104,7 +104,7 @@ function Hero() {
                 </>
 
 
-            )}
+            )} */}
             <div id='video-frame' className='relative z-10 h-dvh w-screen overlfow-hidden rounded-lg bg-blue-75'>
                 <div>
                     <div className=" mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-3xl">
