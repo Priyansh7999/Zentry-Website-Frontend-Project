@@ -87,17 +87,20 @@ function Hero() {
     return (
         <div id='home' className='relative h-dvh w-screen overflow-x-hidden'>
             {loading && (
-                <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
+                <><div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
                     <div className="three-body">
                         <div className="three-body__dot"></div>
                         <div className="three-body__dot"></div>
-                        <div className="three-body__dot"></div>
-                        <div className='text-center'>
-                            <p>
-                                Please wait while the content loads — it might take a little longer the first time. <br /> Once loaded, refreshing the page can help smooth out the animations.
-                            </p>
-                        </div>                    </div>
+                        <div className="three-body__dot"></div>                   </div>
                 </div>
+                    <div className='text-center'>
+                        <p>
+                            Please wait while the content loads — it might take a little longer the first time. <br /> Once loaded, refreshing the page can help smooth out the animations.
+                        </p>
+                    </div>
+                </>
+
+
             )}
             <div id='video-frame' className='relative z-10 h-dvh w-screen overlfow-hidden rounded-lg bg-blue-75'>
                 <div>
