@@ -10,7 +10,7 @@ function Hero() {
     const totalVideos = 4;
     const [currentVideo, setCurrentVideo] = useState(1);
     const [hasClicked, setHasClicked] = useState(false);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [loadedVideos, setLoadedVideos] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const nextVideoRef = useRef(null);
@@ -87,16 +87,19 @@ function Hero() {
     return (
         <div id='home' className='relative h-dvh w-screen overflow-x-hidden'>
             {loading && (
-                <><div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
-                    <div className="three-body">
-                        <div className="three-body__dot"></div>
-                        <div className="three-body__dot"></div>
-                        <div className="three-body__dot"></div>                   </div>
-                </div>
-                    <div className='text-center'>
-                        <p>
-                            Please wait while the content loads — it might take a little longer the first time. <br /> Once loaded, refreshing the page can help smooth out the animations.
-                        </p>
+                <>
+                    <div className="flex-center flex-col absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
+                        <div className="three-body">
+                            <div className="three-body__dot"></div>
+                            <div className="three-body__dot"></div>
+                            <div className="three-body__dot"></div>
+                        </div>
+                        <div className='text-center text-black'>
+                            <br />
+                            <p>
+                                Please wait while the content loads — it might take a little longer the first time. <br /> Once loaded, refreshing the page can help smooth out the animations.
+                            </p>
+                        </div>
                     </div>
                 </>
 
@@ -156,6 +159,7 @@ function Hero() {
             </div>
             <h1 className='special-font hero-heading absolute bottom-5 right-5 text-black-75'>G<b>a</b>ming</h1>
         </div>
+
     );
 }
 
