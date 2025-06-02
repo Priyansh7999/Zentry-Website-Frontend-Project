@@ -7,6 +7,12 @@ import { ScrollTrigger } from 'gsap/all';
 
 gsap.registerPlugin(ScrollTrigger);
 function Hero() {
+    const videos=[
+        "https://a.storyblok.com/f/271652/x/c4a3945939/hero-cut-1.mp4",
+        "https://a.storyblok.com/f/271652/x/927ee8c1eb/hero-cut-2.mp4",
+        "https://a.storyblok.com/f/271652/x/1d3a68d908/hero-cut-3.mp4",
+        "https://a.storyblok.com/f/271652/x/54a86466e4/hero-cut-4.mp4",
+    ]
     const totalVideos = 4;
     const [currentVideo, setCurrentVideo] = useState(1);
     const [hasClicked, setHasClicked] = useState(false);
@@ -16,7 +22,7 @@ function Hero() {
     const nextVideoRef = useRef(null);
 
     function getVideoSrc(index) {
-        return `videos/hero-${index}.mp4`;
+        return videos[index - 1];
     }
 
     function handleMiniVideoClick() {
