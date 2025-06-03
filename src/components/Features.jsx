@@ -12,13 +12,13 @@ export default function Features() {
                 </div>
             </div>
             <div className='flex align-middle justify-center mt-[3rem]'>
-                <FeatureCards src="/videos/feature-1.mp4" title="Radient" description="The game of games app transforming moments across Web2 & Web3 titles into rewards." />
+                <FeatureCards src="https://a.storyblok.com/f/271652/x/385f548f9c/radiant_desktop_homepage_v9.mp4" title="Radient" description="The game of games app transforming moments across Web2 & Web3 titles into rewards." />
             </div>
             <div className="flex flex-col md:flex-row items-center justify-center mt-[2rem] md:gap-7">
                 {/* Left side: Feature 2 */}
                 <div className="w-full md:w-[50%] h-[25rem] md:h-[50.8rem]">
                     <FeatureCards
-                        src="/videos/feature-2.mp4"
+                        src="https://a.storyblok.com/f/271652/x/e4583cf0ec/zigma_desktop_homepage-lg.mp4"
                         title="Zigma"
                         description="An anime and gaming-inspired NFT collection - the IP primed for expansion."
                     />
@@ -35,7 +35,7 @@ export default function Features() {
                     </div>
                     <div className="h-[25rem] md:h-1/2 w-full">
                         <FeatureCards
-                            src="/videos/feature-4.mp4"
+                            src="https://a.storyblok.com/f/271652/x/1708303f5c/spectre_desktop_homepage-lg.mp4"
                             title="Azul"
                             description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
                         />

@@ -128,6 +128,7 @@ function Hero() {
                                 id='mini-video'
                                 className='size-64 object-cover scale-30 rounded-3xl hover:scale-100'
                                 onLoadedData={handleVideoLoad}
+                                // poster='img/about.png'
                             />
                         </div>
                     </div>
