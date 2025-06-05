@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger);
 function Hero() {
     const videos=[
-        "https://a.storyblok.com/f/271652/x/c4a3945939/hero-cut-1.mp4",
+        "/videos/hero-1.mp4",
         "https://a.storyblok.com/f/271652/x/927ee8c1eb/hero-cut-2.mp4",
         "https://a.storyblok.com/f/271652/x/1d3a68d908/hero-cut-3.mp4",
         "https://a.storyblok.com/f/271652/x/54a86466e4/hero-cut-4.mp4",
@@ -26,15 +26,13 @@ function Hero() {
     }
 
     function handleMiniVideoClick() {
-        if (isTransitioning) return; // Prevent multiple clicks during transition
+        if (isTransitioning) return; 
 
         setIsTransitioning(true);
         const nextVideo = (currentVideo % totalVideos) + 1;
 
-        // Start loading the video immediately but don't show it yet
         setHasClicked(true);
 
-        // After 1 second, update the current video and show the transition
         setTimeout(() => {
             setCurrentVideo(nextVideo);
             setIsTransitioning(false);
@@ -118,7 +116,7 @@ function Hero() {
                             onClick={handleMiniVideoClick}
                             className={`origin-center scale-50 opacity-20 transition-all duration-300 ease-out hover-scale-loop ${isTransitioning ? 'pointer-events-none opacity-50' : ''}`}
                         >
-                            {/* MINI VIDEO PLAYER */}
+                            
                             <video
                                 ref={nextVideoRef}
                                 src={getVideoSrc(upcomingVideoIndex)}
@@ -128,11 +126,10 @@ function Hero() {
                                 id='mini-video'
                                 className='size-64 object-cover scale-30 rounded-3xl hover:scale-100'
                                 onLoadedData={handleVideoLoad}
-                                // poster='img/about.png'
                             />
                         </div>
                     </div>
-                    {/* Big video hidden */}
+                   
                     <video
                         ref={nextVideoRef}
                         src={getVideoSrc(currentVideo)}
@@ -143,7 +140,7 @@ function Hero() {
                         className='absolute-center invisible absolute z-20 size-64 object-cover object-center'
                         onLoadedData={handleVideoLoad}
                     />
-                    {/* Big video visible */}
+                   
                     <video
                         src={getVideoSrc(currentVideo)}
                         autoPlay
@@ -153,9 +150,8 @@ function Hero() {
                         onLoadedData={handleVideoLoad}
                     />
                 </div>
-                {/* Gaming at bottom */}
                 <h1 className='special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75'>G<b>a</b>ming</h1>
-                {/* Top Section */}
+                
                 <div className='absolute top-0 left-0 z-40 size-full'>
                     <div className='mt-24 px-5 sm:px-10'>
                         <h1 className='special-font hero-heading text-blue-100'><b>redefine</b></h1>
